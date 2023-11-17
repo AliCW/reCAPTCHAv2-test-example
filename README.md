@@ -12,12 +12,7 @@ Install the required dependencies
 
     npm install
 
-Configure site key & include within .gitignore. Go to https://developers.google.com/recaptcha/intro and configure an api key pair, add localhost to the supported domains. To run this program, create a folder called 'key' in 'src', create a file called 'siteKey.js' and add the below code, inserting your site key
-
-    export default function siteKey() {
-        const siteKey = "<insert-your-site-key>"
-        return siteKey;
-    };
+Configure site key & include within .gitignore. Go to https://developers.google.com/recaptcha/intro and configure an api key pair, add localhost to the supported domains. 
 
 ## Starting ...
 
@@ -25,3 +20,6 @@ Navigate to recaptcha_v2_test folder and type the below to open in localhost
 
     npm start
 
+## Google confirmation...
+
+You should setup a backend to send user responses & your secret key to validate user input. You can change the link in Home.jsx in the handleSend() api.post function. By default for testing, this is set to http://localhost:8000/key/ for testing purposes but you can change this to whatever suitable endpoint.

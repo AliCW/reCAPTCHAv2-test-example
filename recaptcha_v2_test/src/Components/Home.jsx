@@ -4,37 +4,20 @@ import siteKey from '../key/siteKey';
 import axios from 'axios';
 
 export default function Home () {
-    const [recaptchaValue, setRecaptchaValue] = useState();
     const [checkResult, setCheckResult] = useState();
 
     const api = axios.create({
-        baseURL: "/127.0.0.1:8000/",
+        baseURL: "http://127.0.0.1:8000/",
       });
 
     const recaptchaRef = React.createRef();
 
-    const handleSend = () => {
-
-        if (recaptchaValue !== undefined) {
-            return api.post('http://localhost:8000/key/', recaptchaValue.response)
-                .then((response) => {
-                    setCheckResult(response.data.success)
-                });
-        };
-    };
-
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const resolveValue = () => {
-            return new Promise((resolve) => {
-                resolve(setRecaptchaValue({'response': recaptchaRef.current.getValue()}))            
-                setTimeout(() => {
-                }, 2000)
-            });
-        };
-        await resolveValue()
-        .then(() => {
-            handleSend();
+        const token = recaptchaRef.current.getValue()
+        return api.post('http://127.0.0.1:8000/key/', token)
+        .then((response) => {
+            setCheckResult(response.data.success)
         });
     };
 
@@ -53,9 +36,9 @@ export default function Home () {
                     sitekey={siteKey()}
                 />
                 <br></br>
-                <button>DOUBLE CLICK</button>
-                {checkResult === true && <p>CAPTCHA Passed</p>}
-                {checkResult === false && <p>CAPTCHA Failed</p>}
+                <button> TEST </button>
+                {checkResult === true && <p>CAPTCHA Verification Passed</p>}
+                {checkResult === false && <p>CAPTCHA Verification Failed</p>}
                 <p>This site is protected by reCAPTCHA and the Google</p>
                 <a href='https://policies.google.com/privacy'>Privacy Policy</a>
                 <br></br>

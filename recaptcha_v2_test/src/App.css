@@ -16,3 +16,107 @@
 .App-link {
   color: #61dafb;
 }
+
+html {
+  background: url('./Background/black-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  font-family: Helvetica, sans-serif;
+  color: rgb(255, 150, 232);
+}
+
+.recaptcha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.submit-button {
+  transition-duration: 0.17s;
+  background-color: white;
+  color: rgb(0, 115, 192);
+  border: none;
+  display: inline-grid;
+  text-decoration: none;
+  text-align: center;
+  width: 25%;
+  height: 25%;
+  padding: 5px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  letter-spacing: 3.5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-family: Helvetica, sans-serif;
+  border-radius: 25px;
+}
+
+.submit-button:hover {
+  color: rgb(255, 0, 200);
+  background-color:  rgb(17, 17, 17);
+  transition-duration: 0.17s;
+}
+
+.submit-button:active {
+  color: rgba(0, 153, 255, 0.788);
+}
+
+.link-button {
+  transition-duration: 0.17s;
+  background-color: white;
+  color: rgb(0, 115, 192);
+  border: none;
+  display: inline-grid;
+  grid-row-start: 4;
+  grid-column-start: 1;
+  text-decoration: none;
+  text-align: center;
+  width: 13%;
+  height: 25%;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 3.5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-family: Helvetica, sans-serif;
+  border-radius: 25px;
+}
+
+.link-button:hover {
+  color: rgb(255, 0, 200);
+  background-color:  rgb(17, 17, 17);
+  transition-duration: 0.17s;
+}
+
+.link-button:active {
+  color: rgba(0, 153, 255, 0.788);
+}
+
+.text {
+  color: rgb(255, 150, 232);
+  font-size: 1.2em;
+  font-family: Helvetica, sans-serif;
+}
+
+.text-fail {
+  font-size: 1.2em;
+  font-family: Helvetica, sans-serif;
+  color: rgb(198, 1, 1);
+  padding-bottom: 20px;
+}
+
+.text-pass {
+  font-size: 1.2em;
+  font-family: Helvetica, sans-serif;
+  color: rgb(27, 190, 2);
+  padding-bottom: 20px;
+}
